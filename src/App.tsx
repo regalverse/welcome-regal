@@ -28,7 +28,7 @@ function App() {
         {/* Content */}
         <div className="relative z-10 min-h-screen flex items-center justify-center">
           <LiquidGlass className="text-center py-16 px-16">
-            <h1 className="text-6xl md:text-8xl font-bold gold-shimmer">
+            <h1 className="text-6xl md:text-8xl font-bold gold-shimmer leading-relaxed pb-2">
               Welcome Regal
             </h1>
           </LiquidGlass>
