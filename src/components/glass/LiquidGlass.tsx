@@ -15,10 +15,10 @@ interface LiquidGlassProps {
 export function LiquidGlass({
   children,
   className,
-  refraction = 0.5,
-  bevelDepth = 0.3,
-  frost = 0.2,
-  magnify = 1.02,
+  refraction = 0.7,
+  bevelDepth = 0.5,
+  frost = 0.1,
+  magnify = 1.05,
   tilt = true,
 }: LiquidGlassProps) {
   const id = useId()
@@ -36,8 +36,8 @@ export function LiquidGlass({
     <div
       className={cn(
         glassId,
-        'liquidGL rounded-2xl p-6',
-        'glass',
+        'liquidGL rounded-3xl p-6',
+        'bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-white/10',
         className
       )}
     >
