@@ -18,7 +18,7 @@ export const LandingPage: FC = () => {
               The Future of <span className="italic">Cosmic Guidance</span>.
             </h1>
             <p className="text-sm md:text-base font-light tracking-[0.05em] leading-relaxed text-deep-charcoal/70 dark:text-gray-400 max-w-xl mx-auto">
-              Something revolutionary is on the horizon. Astro Regal is redefining astrology for the modern professional. Launching soon.
+              Something revolutionary is on the horizon. AstroRegal is redefining astrology for young minds. Launching soon.
             </p>
           </div>
           

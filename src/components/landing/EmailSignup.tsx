@@ -94,7 +94,7 @@ export const EmailSignup: FC = () => {
         }`}>
           <input 
             className="flex-1 bg-transparent border-none px-5 py-4 text-sm focus:ring-0 placeholder:text-deep-charcoal/30 text-deep-charcoal dark:text-white disabled:opacity-50 disabled:cursor-not-allowed" 
-            placeholder="Enter your professional email" 
+            placeholder="Enter your email" 
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -140,7 +140,7 @@ export const EmailSignup: FC = () => {
       
       {state === 'idle' && (
         <p className="mt-4 text-[10px] uppercase tracking-widest text-deep-charcoal/40 dark:text-gray-500">
-          Exclusively for curated professionals
+          Where Logic Meets the Cosmos
         </p>
       )}
     </div>

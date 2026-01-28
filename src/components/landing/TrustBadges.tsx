@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { Shield, Gavel, Cpu } from 'lucide-react'
+import { Shield, Cpu, Earth } from 'lucide-react'
 
 interface Badge {
   icon: React.ReactNode
@@ -7,8 +7,8 @@ interface Badge {
 }
 
 const badges: Badge[] = [
-  { icon: <Shield className="w-4 h-4" />, label: 'Vedic Precision' },
-  { icon: <Gavel className="w-4 h-4" />, label: 'Legal Compliance' },
+  { icon: <Shield className="w-4 h-4" />, label: 'Vedic Guidance' },
+  { icon: <Earth className="w-4 h-4" />, label: 'Real time planetary placement' },
   { icon: <Cpu className="w-4 h-4" />, label: 'AI Integration' },
 ]
 

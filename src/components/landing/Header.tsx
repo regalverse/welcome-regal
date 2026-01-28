@@ -21,7 +21,7 @@ export const Header: FC = () => {
           </svg>
         </div>
         <h2 className="font-serif text-2xl font-bold tracking-tight text-deep-charcoal dark:text-white">
-          Astro Regal
+          AstroRegal
         </h2>
       </div>
       <div className="hidden md:flex gap-8">
