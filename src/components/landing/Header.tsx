@@ -6,7 +6,7 @@ export const Header: FC = () => {
       <div className="flex items-center gap-2">
         <div className="w-10 h-10">
           <img 
-            src="/astroregal_logo.png" 
+            src="/astroregal_logo_full.png" 
             alt="AstroRegal Logo" 
             className="w-full h-full object-contain"
           />
