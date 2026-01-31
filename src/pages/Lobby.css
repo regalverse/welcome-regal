@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --primary-gold: #C5A028;
+  --cream: #FDFBF7;
+  --charcoal: #2D2D2D;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 40, 0.15);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-pill {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(197, 160, 40, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(197, 160, 40, 0.08);
+}
+
+.glow-subtle {
+  box-shadow: 0 0 50px rgba(197, 160, 40, 0.05);
+}
+
+.constellation-overlay {
+  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_xqJb6CAb7YLOO2JXdPa_GsrREQmKbvJL6_4QXhEO1_e5UVFwwpo25RQF9luivHukNb9VJH-roRVm-vPm63FtLLgBqGsI8mHa7tdME40ydZUeIGgKGwp4lIGT4pnYfOQPS5lvjr8ln7RCOv2UFzBE_umO7HqQ7A08z8bW251XHxYPk8gLQ987omSD-fwxZyYWUUDnHVUUQGUKYJxcjIh6O1Ipo3Bk8kOyENYuOzJ0jzsdlSjIM2Lp7RnzryYqaCvx0qi1wGP--lm3');
+  background-repeat: repeat;
+  opacity: 0.03;
+}
+
+.nebula-nav-bg {
+  background: radial-gradient(circle at 20% 50%, rgba(197, 160, 40, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 80% 50%, rgba(197, 160, 40, 0.05) 0%, transparent 40%);
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.search-shadow {
+  box-shadow: 0 4px 24px -5px rgba(197, 160, 40, 0.2);
+}
+
+.planet-illustration {
+  background: radial-gradient(circle at center, rgba(197, 160, 40, 0.15) 0%, transparent 70%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.user-orbit {
+  position: relative;
+  padding: 4px;
+}
+
+.orbit-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 1px solid rgba(197, 160, 40, 0.3);
+}
+
+.orbit-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #C5A028;
+  border-radius: 9999px;
+  top: 15%;
+  right: 0%;
+  box-shadow: 0 0 10px #C5A028;
+}
+
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 120s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-slow {
+  animation: float 10s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: float 12s ease-in-out infinite 2s;
+}
