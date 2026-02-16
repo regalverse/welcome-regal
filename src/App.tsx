@@ -1,16 +1,19 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { LandingPage } from '@/pages/LandingPage'
-import { Lobby } from '@/pages/Lobby'
-import { KPAIPage } from '@/pages/KPAIPage'
+const AboutPage = lazy(() => import('@/pages/AboutPage'))
+const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'))
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/lobby" element={<Lobby />} />
-        <Route path="/kpai" element={<KPAIPage />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }

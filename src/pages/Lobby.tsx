@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ZodiacWheel, ConstellationDecoration, MysticKnot } from '@/components/LobbyGraphics';
 import './Lobby.css';
 
@@ -65,8 +66,8 @@ export const Lobby = () => {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-10 relative z-10">
-            <a className="font-display text-sm italic hover:text-[#C5A028] transition-colors py-1" href="#">Lobby</a>
-            <a className="font-display text-sm italic text-[#C5A028] py-1 border-b border-[#C5A028]/30" href="#">KarmaGPT</a>
+            <Link className="font-display text-sm italic hover:text-[#C5A028] transition-colors py-1" to="/lobby">Lobby</Link>
+            <Link className="font-display text-sm italic text-[#C5A028] py-1 border-b border-[#C5A028]/30" to="/kpai">KarmaGPT</Link>
             <a className="font-display text-sm italic hover:text-[#C5A028] transition-colors py-1" href="#">Wallet</a>
           </div>
 
@@ -98,8 +99,8 @@ export const Lobby = () => {
           {/* Mobile Menu Dropdown */}
           {isMenuOpen && (
             <div className="absolute top-full left-0 w-full mt-4 p-4 bg-[#FDFBF7] border border-[#C5A028]/20 shadow-2xl rounded-2xl flex flex-col gap-4 lg:hidden animate-in slide-in-from-top-4 fade-in duration-200 z-50">
-               <a className="font-display text-lg italic text-[#2D2D2D] hover:text-[#C5A028] transition-colors text-center py-2" href="#">Lobby</a>
-               <a className="font-display text-lg italic text-[#C5A028] hover:text-[#C5A028] transition-colors text-center py-2 border-b border-[#C5A028]/10 bg-[#C5A028]/5 rounded-xl" href="#">KarmaGPT</a>
+               <Link className="font-display text-lg italic text-[#2D2D2D] hover:text-[#C5A028] transition-colors text-center py-2" to="/lobby">Lobby</Link>
+               <Link className="font-display text-lg italic text-[#C5A028] hover:text-[#C5A028] transition-colors text-center py-2 border-b border-[#C5A028]/10 bg-[#C5A028]/5 rounded-xl" to="/kpai">KarmaGPT</Link>
                <a className="font-display text-lg italic text-[#2D2D2D] hover:text-[#C5A028] transition-colors text-center py-2" href="#">Wallet</a>
             </div>
           )}
@@ -452,8 +453,8 @@ export const Lobby = () => {
                     <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#2D2D2D]">© AstroRegal. All cosmic alignments reserved.</span>
                 </div>
                 <div className="flex items-center gap-12 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2D2D2D]/40">
-                    <a className="hover:text-[#C5A028] transition-colors" href="#">Privacy Policy</a>
-                    <a className="hover:text-[#C5A028] transition-colors" href="#">Terms of Service</a>
+                    <Link className="hover:text-[#C5A028] transition-colors" to="/privacy">Privacy Policy</Link>
+                    <Link className="hover:text-[#C5A028] transition-colors" to="/about">About Us</Link>
                     <a className="hover:text-[#C5A028] transition-colors" href="#">Support</a>
                 </div>
                 </div>
