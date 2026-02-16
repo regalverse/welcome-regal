@@ -99,7 +99,7 @@ const AboutPage: FC = () => {
           </p>
 
           <p className="pt-6 text-sm text-neutral-500 dark:text-neutral-500">
-            Regalverse Private Limited — Bengaluru, India. Architects of the
+            Regalverse Private Limited — Gurgaon, India. Architects of the
             Modern Cosmos.
           </p>
         </section>
