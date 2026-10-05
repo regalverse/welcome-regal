@@ -226,13 +226,43 @@ const PrivacyPolicyPage: FC = () => {
                 <strong>Designation:</strong> Grievance Officer
               </p>
               <p>
-                <strong>Email:</strong> privacy@astroregal.com
+                <strong>Email:</strong> admin@astroregal.com
               </p>
               <p>
                 <strong>Address:</strong> Regalverse Private Limited, Gurgaon,
                 India
               </p>
             </div>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+              9. How to Delete Your Account
+            </h2>
+            <p className="mb-2">
+              You can delete your AstroRegal account directly from the app:
+            </p>
+            <ol className="list-decimal pl-6 space-y-2 mb-4">
+              <li>
+                <strong>Step 1:</strong> Navigate to Edit Profile and scroll
+                down.
+              </li>
+              <li>
+                <strong>Step 2:</strong> Find the Delete Account button and
+                proceed with it.
+              </li>
+            </ol>
+            <p>
+              Alternatively, you can share your account details (such as your
+              registered mobile number) with us at{' '}
+              <a
+                href="mailto:admin@astroregal.com"
+                className="underline hover:text-neutral-900 dark:hover:text-neutral-100"
+              >
+                admin@astroregal.com
+              </a>{' '}
+              and our team will delete your account for you.
+            </p>
           </div>
         </section>
       </div>
