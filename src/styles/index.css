@@ -1,103 +1,83 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 /* ============================================
-   OKLCH Color System
-   Base: oklch(0.76 0.14 90.32) - Golden Amber
+   AstroRegal Design System v1.1 — "Mystical Dark, Cosmic Violet Flame"
+   Source: Figma "AR-Phase-1" → Design System page.
+   Dark-only theme; token names mirror the Figma colorway.
    ============================================ */
 
 :root {
-  /* Gold Primary Scale */
-  --gold-50: oklch(0.98 0.02 90);
-  --gold-100: oklch(0.95 0.04 90);
-  --gold-200: oklch(0.88 0.08 90);
-  --gold-300: oklch(0.82 0.12 90);
-  --gold-400: oklch(0.76 0.14 90.32);
-  --gold-500: oklch(0.68 0.14 90);
-  --gold-600: oklch(0.58 0.12 88);
-  --gold-700: oklch(0.48 0.1 86);
-  --gold-800: oklch(0.38 0.08 84);
-  --gold-900: oklch(0.28 0.06 82);
+  color-scheme: dark;
 
-  /* Stone Neutral Scale (warm tinted) */
-  --stone-50: oklch(0.985 0.004 90);
-  --stone-100: oklch(0.96 0.006 88);
-  --stone-200: oklch(0.91 0.008 86);
-  --stone-300: oklch(0.83 0.01 84);
-  --stone-400: oklch(0.71 0.012 82);
-  --stone-500: oklch(0.55 0.01 80);
-  --stone-600: oklch(0.44 0.008 78);
-  --stone-700: oklch(0.34 0.006 76);
-  --stone-800: oklch(0.24 0.005 74);
-  --stone-900: oklch(0.17 0.004 72);
-  --stone-950: oklch(0.11 0.003 70);
+  /* Group 1 — Primary darks (surface hierarchy L1 → L3) */
+  --cosmic-void: #0b0d14;
+  --midnight-space: #161926;
+  --nebula-veil: rgb(255 255 255 / 0.06);
 
-  /* Semantic Colors */
+  /* Group 2 — Violet flame (interactive accent ramp) */
+  --celestial-violet: #7c5cfc;
+  --astral-iris: #8d71fc;
+  --lunar-wisteria: #a78bfa;
+  --twilight-orchid: #c4b5fd;
+
+  /* Group 3 — Starlight text */
+  --starlight-white: #ffffff;
+  --pearl-mist: #f3f4f6;
+  --silver-frost: #f2f5f7;
+  --cosmic-slate: #9ca3af;
+  --dark-nebula: #6b7280;
+
+  /* Group 4 — Celestial accents */
+  --radiant-sun: #d4a843;
+  --solar-accent: #ffc747;
+  --void-overlay: rgb(255 255 255 / 0.12);
+
+  /* Border tokens */
+  --nebula-edge: #232739;
+  --twilight-line: #333751;
+  --stardust-glow: #4a4e6b;
+  --violet-whisper: rgb(124 92 252 / 0.25);
+
+  /* Semantic status colors */
   --success: oklch(0.72 0.17 145);
-  --warning: oklch(0.8 0.15 65);
+  --warning: var(--solar-accent);
   --error: oklch(0.62 0.22 25);
   --info: oklch(0.68 0.14 245);
 
-  /* Landing Page Custom Colors */
-  --deep-charcoal: #2d2926;
-  --background-light: #fffdf9;
-  --background-dark: #201d12;
-
-  /* Shadcn Token Mapping - Light Mode */
-  --background: var(--stone-50);
-  --foreground: var(--stone-900);
-  --card: oklch(1 0 0);
-  --card-foreground: var(--stone-900);
-  --popover: oklch(1 0 0);
-  --popover-foreground: var(--stone-900);
-  --primary: var(--gold-400);
-  --primary-foreground: var(--stone-900);
-  --secondary: var(--stone-100);
-  --secondary-foreground: var(--stone-800);
-  --muted: var(--stone-100);
-  --muted-foreground: var(--stone-500);
-  --accent: var(--gold-100);
-  --accent-foreground: var(--gold-800);
-  --destructive: var(--error);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: var(--stone-200);
-  --input: var(--stone-200);
-  --ring: var(--gold-400);
+  /* Shadcn token mapping */
+  --background: var(--cosmic-void);
+  --foreground: var(--pearl-mist);
+  --card: var(--midnight-space);
+  --card-foreground: var(--pearl-mist);
+  --popover: var(--midnight-space);
+  --popover-foreground: var(--pearl-mist);
+  --primary: var(--celestial-violet);
+  --primary-foreground: var(--starlight-white);
+  --secondary: var(--nebula-veil);
+  --secondary-foreground: var(--pearl-mist);
+  --muted: var(--nebula-veil);
+  --muted-foreground: var(--cosmic-slate);
+  --accent: rgb(124 92 252 / 0.15);
+  --accent-foreground: var(--twilight-orchid);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: var(--starlight-white);
+  --border: var(--twilight-line);
+  --input: var(--twilight-line);
+  --ring: var(--celestial-violet);
   --radius: 0.75rem;
 
-  /* Typography */
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-mono: "JetBrains Mono", monospace;
+  /* Typography — Fraunces (display/serif) + Outfit (UI/body) */
+  --typeface-display: "Fraunces", Georgia, serif;
+  --typeface-sans: "Outfit", system-ui, sans-serif;
+  --typeface-mono: "JetBrains Mono", monospace;
+
+  /* Effects */
+  --glass-blur: 12px;
 
   /* Animation */
   --animation-duration: 200ms;
   --shimmer-duration: 1000ms;
-}
-
-.dark {
-  --background: var(--stone-950);
-  --foreground: var(--stone-50);
-  --card: var(--stone-900);
-  --card-foreground: var(--stone-50);
-  --popover: var(--stone-900);
-  --popover-foreground: var(--stone-50);
-  --primary: var(--gold-400);
-  --primary-foreground: var(--stone-950);
-  --secondary: var(--stone-800);
-  --secondary-foreground: var(--stone-100);
-  --muted: var(--stone-800);
-  --muted-foreground: var(--stone-400);
-  --accent: var(--gold-900);
-  --accent-foreground: var(--gold-100);
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: var(--stone-700);
-  --input: var(--stone-800);
-  --ring: var(--gold-500);
 }
 
 @theme inline {
@@ -122,30 +102,26 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Gold scale */
-  --color-gold-50: var(--gold-50);
-  --color-gold-100: var(--gold-100);
-  --color-gold-200: var(--gold-200);
-  --color-gold-300: var(--gold-300);
-  --color-gold-400: var(--gold-400);
-  --color-gold-500: var(--gold-500);
-  --color-gold-600: var(--gold-600);
-  --color-gold-700: var(--gold-700);
-  --color-gold-800: var(--gold-800);
-  --color-gold-900: var(--gold-900);
-
-  /* Stone scale */
-  --color-stone-50: var(--stone-50);
-  --color-stone-100: var(--stone-100);
-  --color-stone-200: var(--stone-200);
-  --color-stone-300: var(--stone-300);
-  --color-stone-400: var(--stone-400);
-  --color-stone-500: var(--stone-500);
-  --color-stone-600: var(--stone-600);
-  --color-stone-700: var(--stone-700);
-  --color-stone-800: var(--stone-800);
-  --color-stone-900: var(--stone-900);
-  --color-stone-950: var(--stone-950);
+  /* AstroRegal palette */
+  --color-cosmic-void: var(--cosmic-void);
+  --color-midnight-space: var(--midnight-space);
+  --color-nebula-veil: var(--nebula-veil);
+  --color-celestial-violet: var(--celestial-violet);
+  --color-astral-iris: var(--astral-iris);
+  --color-lunar-wisteria: var(--lunar-wisteria);
+  --color-twilight-orchid: var(--twilight-orchid);
+  --color-starlight-white: var(--starlight-white);
+  --color-pearl-mist: var(--pearl-mist);
+  --color-silver-frost: var(--silver-frost);
+  --color-cosmic-slate: var(--cosmic-slate);
+  --color-dark-nebula: var(--dark-nebula);
+  --color-radiant-sun: var(--radiant-sun);
+  --color-solar-accent: var(--solar-accent);
+  --color-void-overlay: var(--void-overlay);
+  --color-nebula-edge: var(--nebula-edge);
+  --color-twilight-line: var(--twilight-line);
+  --color-stardust-glow: var(--stardust-glow);
+  --color-violet-whisper: var(--violet-whisper);
 
   /* Semantic */
   --color-success: var(--success);
@@ -153,23 +129,30 @@
   --color-error: var(--error);
   --color-info: var(--info);
 
-  /* Landing Page Colors */
-  --color-deep-charcoal: var(--deep-charcoal);
-  --color-background-light: var(--background-light);
-  --color-background-dark: var(--background-dark);
-
-  /* Radius */
+  /* Radius — shadcn scale plus the Figma "Orbits of Rounding" */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
+  --radius-chip: 4px;
+  --radius-card: 12px;
+  --radius-panel: 16px;
+  --radius-sheet: 20px;
+  --radius-button: 32px;
+
+  /* Effect styles */
+  --shadow-card: 0 4px 12px 0 rgb(0 0 0 / 0.3);
+  --shadow-modal: 0 8px 24px -4px rgb(0 0 0 / 0.5);
+  --shadow-glow-violet: 0 4px 16px 0 rgb(124 92 252 / 0.35);
+  --shadow-glow-gold: 0 2px 12px 0 rgb(212 168 67 / 0.25);
+  --blur-glass: var(--glass-blur);
 
   /* Font families */
-  --font-family-display: var(--font-display);
-  --font-family-sans: var(--font-sans);
-  --font-family-serif: var(--font-serif);
-  --font-family-mono: var(--font-mono);
+  --font-display: var(--typeface-display);
+  --font-serif: var(--typeface-display);
+  --font-sans: var(--typeface-sans);
+  --font-mono: var(--typeface-mono);
 }
 
 @layer base {
@@ -178,7 +161,7 @@
   }
 
   html {
-    font-family: var(--font-sans);
+    font-family: var(--typeface-sans);
   }
 
   body {
@@ -191,14 +174,54 @@
   h1,
   h2,
   h3 {
-    font-family: var(--font-display);
-    font-weight: 500;
+    font-family: var(--typeface-display);
+    font-weight: 400;
+    color: var(--starlight-white);
+  }
+
+  /* Fraunces is configured with SOFT 0 / WONK 1 throughout the Figma type scale */
+  .font-display,
+  .font-serif,
+  h1,
+  h2,
+  h3 {
+    font-variation-settings:
+      "SOFT" 0,
+      "WONK" 1;
   }
 
   code,
   pre {
-    font-family: var(--font-mono);
+    font-family: var(--typeface-mono);
   }
+
+  ::selection {
+    background: rgb(124 92 252 / 0.35);
+    color: var(--starlight-white);
+  }
+}
+
+/* Constellation / Major + Minor — tracked uppercase micro-labels */
+@utility label-major {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+@utility label-minor {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}
+
+@utility glass {
+  background: var(--nebula-veil);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--violet-whisper);
 }
 
 /* ============================================
@@ -227,7 +250,7 @@
 
   .aui-user-message-content {
     @apply max-w-[85%] rounded-2xl px-4 py-3;
-    @apply bg-gold-400 text-stone-900;
+    @apply bg-celestial-violet text-starlight-white;
     @apply shadow-sm;
   }
 
@@ -237,7 +260,7 @@
 
   .aui-assistant-message-content {
     @apply max-w-[85%] rounded-2xl px-4 py-3;
-    @apply bg-stone-100 dark:bg-stone-800;
+    @apply bg-card border border-twilight-line;
     @apply text-foreground;
   }
 
@@ -245,66 +268,66 @@
   .aui-composer-root {
     @apply flex items-end gap-2 p-4;
     @apply border-t border-border;
-    @apply bg-background/80 backdrop-blur-sm;
+    @apply bg-background/80 backdrop-blur-glass;
   }
 
   .aui-composer-input {
     @apply flex-1 resize-none rounded-xl px-4 py-3;
-    @apply bg-stone-100 dark:bg-stone-800;
-    @apply border border-border;
-    @apply text-foreground placeholder:text-muted-foreground;
-    @apply focus:outline-none focus:ring-2 focus:ring-gold-400/50;
+    @apply bg-nebula-veil;
+    @apply border-[1.5px] border-twilight-line;
+    @apply text-foreground placeholder:text-dark-nebula;
+    @apply focus:outline-none focus:border-celestial-violet focus:ring-1 focus:ring-celestial-violet;
     @apply min-h-[48px] max-h-[200px];
-    font-family: var(--font-sans);
+    font-family: var(--typeface-sans);
   }
 
   .aui-composer-send {
-    @apply rounded-xl px-4 py-3 h-12;
-    @apply bg-gold-400 hover:bg-gold-500;
-    @apply text-stone-900 font-medium;
+    @apply rounded-button px-5 py-3 h-12;
+    @apply bg-celestial-violet hover:bg-astral-iris active:bg-lunar-wisteria;
+    @apply text-starlight-white font-semibold shadow-glow-violet;
     @apply transition-colors duration-200;
-    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply disabled:opacity-30 disabled:shadow-none disabled:cursor-not-allowed;
     @apply flex items-center justify-center gap-2;
   }
 
   /* Reasoning/Thinking styles */
   .aui-reasoning-root {
     @apply rounded-lg p-3 my-2;
-    @apply bg-stone-100/50 dark:bg-stone-800/50;
-    @apply border border-stone-200 dark:border-stone-700;
+    @apply bg-nebula-veil;
+    @apply border border-nebula-edge;
     @apply text-sm text-muted-foreground;
     @apply italic;
   }
 
   .aui-reasoning-header {
     @apply flex items-center gap-2 font-medium not-italic;
-    @apply text-stone-600 dark:text-stone-400;
+    @apply text-cosmic-slate;
     @apply cursor-pointer select-none;
   }
 
   .aui-reasoning-content {
     @apply mt-2 pl-6;
-    @apply text-stone-500 dark:text-stone-400;
+    @apply text-cosmic-slate;
   }
 
   /* Shimmer animation for streaming reasoning */
   .aui-reasoning-streaming::after {
     content: "";
     @apply inline-block w-2 h-4 ml-1;
-    @apply bg-gold-400/60;
+    @apply bg-celestial-violet/60;
     animation: blink 1s step-end infinite;
   }
 
   /* Tool UI styles */
   .aui-tool-ui-root {
-    @apply rounded-xl p-4 my-2;
-    @apply bg-stone-100 dark:bg-stone-800;
-    @apply border border-stone-200 dark:border-stone-700;
+    @apply rounded-card p-4 my-2;
+    @apply bg-card shadow-card;
+    @apply border-[1.5px] border-twilight-line;
   }
 
   .aui-tool-ui-header {
     @apply flex items-center gap-2 text-sm font-medium;
-    @apply text-stone-600 dark:text-stone-400;
+    @apply text-cosmic-slate;
     @apply mb-2;
   }
 
@@ -318,7 +341,7 @@
       @apply fixed right-0 top-0 bottom-0;
       @apply w-[420px] max-w-[40vw];
       @apply bg-card border-l border-border;
-      @apply shadow-xl;
+      @apply shadow-modal;
       @apply z-50;
       @apply overflow-y-auto;
       @apply p-6;
@@ -328,30 +351,30 @@
 
   /* Tool Fallback (Collapsible tool call indicator) */
   .aui-tool-fallback-root {
-    @apply bg-stone-50 dark:bg-stone-900;
-    @apply border-stone-200 dark:border-stone-700;
+    @apply bg-card;
+    @apply border-twilight-line;
     @apply my-2;
   }
 
   .aui-tool-fallback-trigger {
-    @apply hover:bg-stone-100 dark:hover:bg-stone-800;
+    @apply hover:bg-nebula-veil;
     @apply rounded-md -mx-2 px-2;
     @apply transition-colors;
   }
 
   .aui-tool-fallback-trigger-icon {
-    @apply text-gold-500;
+    @apply text-celestial-violet;
   }
 
   .aui-tool-fallback-args-value,
   .aui-tool-fallback-result-content {
-    @apply text-stone-600 dark:text-stone-400;
+    @apply text-cosmic-slate;
     @apply font-mono text-xs;
   }
 
   /* Typing indicator */
   .aui-typing-indicator {
-    @apply text-stone-500 dark:text-stone-400;
+    @apply text-cosmic-slate;
   }
 
   /* Welcome screen */
@@ -361,9 +384,9 @@
   }
 
   .aui-welcome-title {
-    @apply text-3xl md:text-4xl font-semibold;
-    @apply text-foreground mb-4;
-    font-family: var(--font-display);
+    @apply text-3xl md:text-4xl font-normal;
+    @apply text-starlight-white mb-4;
+    font-family: var(--typeface-display);
   }
 
   .aui-welcome-subtitle {
@@ -376,11 +399,11 @@
 
   .aui-welcome-suggestion {
     @apply px-4 py-2 rounded-full;
-    @apply bg-stone-100 dark:bg-stone-800;
-    @apply border border-stone-200 dark:border-stone-700;
+    @apply bg-nebula-veil;
+    @apply border-[1.5px] border-twilight-line;
     @apply text-sm text-foreground;
-    @apply hover:bg-gold-100 hover:border-gold-300;
-    @apply dark:hover:bg-gold-900/30 dark:hover:border-gold-700;
+    @apply hover:bg-celestial-violet/8 hover:border-celestial-violet;
+    @apply active:bg-celestial-violet/15;
     @apply transition-colors cursor-pointer;
   }
 }
@@ -399,7 +422,7 @@
   }
 
   .aui-markdown strong {
-    @apply font-semibold text-foreground;
+    @apply font-semibold text-starlight-white;
   }
 
   .aui-markdown em {
@@ -407,23 +430,23 @@
   }
 
   .aui-markdown a {
-    @apply text-gold-500 hover:text-gold-400 underline underline-offset-2;
+    @apply text-lunar-wisteria hover:text-twilight-orchid font-semibold underline underline-offset-2;
     @apply transition-colors;
   }
 
   .aui-markdown code:not(pre code) {
     @apply px-1.5 py-0.5 rounded text-sm;
-    @apply bg-stone-200 dark:bg-stone-700;
-    @apply text-stone-800 dark:text-stone-200;
-    font-family: var(--font-mono);
+    @apply bg-void-overlay;
+    @apply text-silver-frost;
+    font-family: var(--typeface-mono);
   }
 
   .aui-markdown pre {
     @apply p-4 rounded-lg overflow-x-auto my-3;
-    @apply bg-stone-900 dark:bg-stone-950;
-    @apply text-stone-100;
+    @apply bg-cosmic-void border border-nebula-edge;
+    @apply text-pearl-mist;
     @apply text-sm;
-    font-family: var(--font-mono);
+    font-family: var(--typeface-mono);
   }
 
   .aui-markdown pre code {
@@ -432,7 +455,7 @@
   }
 
   .aui-markdown blockquote {
-    @apply border-l-4 border-gold-400 pl-4 my-3;
+    @apply border-l-4 border-celestial-violet pl-4 my-3;
     @apply text-muted-foreground italic;
   }
 
@@ -449,18 +472,18 @@
   }
 
   .aui-markdown h1 {
-    @apply text-2xl font-semibold mt-6 mb-3;
-    font-family: var(--font-display);
+    @apply text-2xl font-normal mt-6 mb-3;
+    font-family: var(--typeface-display);
   }
 
   .aui-markdown h2 {
-    @apply text-xl font-semibold mt-5 mb-2;
-    font-family: var(--font-display);
+    @apply text-xl font-normal mt-5 mb-2;
+    font-family: var(--typeface-display);
   }
 
   .aui-markdown h3 {
     @apply text-lg font-semibold mt-4 mb-2;
-    font-family: var(--font-display);
+    font-family: var(--typeface-display);
   }
 
   .aui-markdown h4 {
@@ -468,7 +491,7 @@
   }
 
   .aui-markdown hr {
-    @apply border-border my-6;
+    @apply border-nebula-edge my-6;
   }
 
   .aui-markdown table {
@@ -477,7 +500,7 @@
 
   .aui-markdown th {
     @apply border border-border px-3 py-2 text-left;
-    @apply bg-stone-100 dark:bg-stone-800;
+    @apply bg-nebula-veil;
     @apply font-semibold text-sm;
   }
 
@@ -614,7 +637,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    var(--gold-400) 50%,
+    var(--lunar-wisteria) 50%,
     transparent 100%
   );
   background-size: 200% 100%;
@@ -624,28 +647,16 @@
   color: transparent;
 }
 
-.dark .shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--gold-300) 50%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
 
 /* Gold shimmer text */
 .gold-shimmer {
   background: linear-gradient(
     110deg,
-    var(--gold-400) 0%,
-    var(--gold-200) 25%,
-    var(--gold-400) 50%,
-    var(--gold-200) 75%,
-    var(--gold-400) 100%
+    var(--radiant-sun) 0%,
+    var(--solar-accent) 25%,
+    var(--radiant-sun) 50%,
+    var(--solar-accent) 75%,
+    var(--radiant-sun) 100%
   );
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
@@ -661,7 +672,7 @@
 @layer utilities {
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: var(--stone-300) transparent;
+    scrollbar-color: var(--twilight-line) transparent;
   }
 
   .scrollbar-thin::-webkit-scrollbar {
@@ -674,25 +685,16 @@
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: var(--stone-300);
+    background: var(--twilight-line);
     border-radius: 3px;
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: var(--stone-400);
+    background: var(--stardust-glow);
   }
 
-  .dark .scrollbar-thin {
-    scrollbar-color: var(--stone-600) transparent;
-  }
 
-  .dark .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: var(--stone-600);
-  }
 
-  .dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: var(--stone-500);
-  }
 }
 
 /* ============================================
@@ -712,3 +714,182 @@
   background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAG_B3GoI-uUg26aQT6T1ytjQWqsKd_TvkY-sgfqUFyVeJbcSFnPvQFttr8ClDcLlAuwla-bxNoCpbrC5pAgzccMnJI6MdlpDRPVOfZetv40StvCSSsd2ca97nL-UxuJVrTluphADSv99-w1Jbh-7feqTqpFmGiveNqGVtrqmr5yrY90zf2jZbbQVVR8Dzh6e3B-AUWmCe0Wr0fvF6Js975iyqm6Dm2Nu5Sy8X16C230o77PoMGLs5GyGNffef4Jw2DohL3WGKXu04Q');
 }
 
+
+/* ============================================
+   Marketing Site — motion + helpers
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+/* Violet Nebula / Solar Flare text gradients for display headlines */
+.text-gradient-violet {
+  background: linear-gradient(120deg, var(--twilight-orchid) 0%, var(--celestial-violet) 55%, var(--lunar-wisteria) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, var(--solar-accent) 0%, var(--radiant-sun) 60%, #b98a2c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Twilight Horizon card treatment */
+.card-horizon {
+  background:
+    linear-gradient(180deg, rgb(124 92 252 / 0.08) 0%, transparent 60%),
+    var(--midnight-space);
+  border: 1.5px solid var(--twilight-line);
+  border-radius: 20px;
+}
+
+/* Scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 900ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--marquee-duration, 60s) linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee var(--marquee-duration, 60s) linear infinite reverse;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.animate-float {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-y 9s ease-in-out infinite 1.5s;
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit-spin 80s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-spin 120s linear infinite reverse;
+}
+
+@keyframes typing-dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+.typing-dot {
+  animation: typing-dot 1.2s ease-in-out infinite;
+}
+
+@keyframes ping-soft {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.animate-ping-soft {
+  animation: ping-soft 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.typing-caret::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: var(--lunar-wisteria);
+  animation: caret-blink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-float,
+  .animate-float-slow,
+  .animate-orbit,
+  .animate-orbit-reverse,
+  .animate-ping-soft,
+  .typing-dot {
+    animation: none;
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

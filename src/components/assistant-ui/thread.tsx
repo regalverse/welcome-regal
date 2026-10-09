@@ -101,7 +101,7 @@ const Composer: FC = () => {
         <ComposerPrimitive.Cancel
           className={cn(
             'aui-composer-send',
-            'bg-stone-200 hover:bg-stone-300 dark:bg-stone-700 dark:hover:bg-stone-600'
+            'bg-void-overlay hover:bg-stardust-glow text-pearl-mist'
           )}
         >
           <Square className="w-4 h-4" />

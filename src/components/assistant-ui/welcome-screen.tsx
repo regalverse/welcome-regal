@@ -16,7 +16,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = ({ onSuggestionClick }) => 
   return (
     <div className="aui-welcome-root">
       <div className="mb-6">
-        <Sparkles className="w-12 h-12 text-gold-400 mx-auto mb-4" />
+        <Sparkles className="w-12 h-12 text-lunar-wisteria mx-auto mb-4" />
       </div>
       <h1 className="aui-welcome-title">
         What cosmic insights do you seek?

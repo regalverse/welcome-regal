@@ -85,15 +85,15 @@ export const EmailSignup: FC = () => {
   return (
     <div className="w-full max-w-md">
       <form onSubmit={handleSubmit}>
-        <div className={`flex flex-col sm:flex-row gap-0 border rounded-lg overflow-hidden transition-all ${
+        <div className={`flex flex-col sm:flex-row gap-0 border-[1.5px] rounded-panel overflow-hidden bg-nebula-veil transition-all ${
           state === 'success' 
-            ? 'border-green-500/60' 
+            ? 'border-success/60' 
             : state === 'error' 
-            ? 'border-red-500/60' 
-            : 'border-primary/40 focus-within:border-primary'
+            ? 'border-error/60' 
+            : 'border-twilight-line focus-within:border-celestial-violet'
         }`}>
           <input 
-            className="flex-1 bg-transparent border-none px-5 py-4 text-sm focus:ring-0 placeholder:text-deep-charcoal/30 text-deep-charcoal dark:text-white disabled:opacity-50 disabled:cursor-not-allowed" 
+            className="flex-1 bg-transparent border-none px-5 py-4 text-sm focus:outline-none placeholder:text-dark-nebula text-pearl-mist disabled:opacity-50 disabled:cursor-not-allowed" 
             placeholder="Enter your email" 
             type="email"
             value={email}
@@ -104,7 +104,7 @@ export const EmailSignup: FC = () => {
           <button 
             type="submit"
             disabled={isDisabled}
-            className="bg-primary text-deep-charcoal font-bold text-xs uppercase tracking-[0.15em] px-8 py-4 hover:bg-primary/90 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="bg-celestial-violet text-starlight-white font-bold text-xs uppercase tracking-[0.15em] px-8 py-4 hover:bg-astral-iris active:bg-lunar-wisteria transition-colors whitespace-nowrap disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {state === 'loading' ? (
               <>
@@ -125,21 +125,21 @@ export const EmailSignup: FC = () => {
       
       {/* Status Messages */}
       {state === 'success' && (
-        <div className="mt-4 flex items-center gap-2 text-green-600 dark:text-green-400 text-sm">
+        <div className="mt-4 flex items-center gap-2 text-success text-sm">
           <CheckCircle2 className="w-4 h-4" />
           <p>Thanks! You're on the list. We'll be in touch soon.</p>
         </div>
       )}
       
       {state === 'error' && (
-        <div className="mt-4 flex items-center gap-2 text-red-600 dark:text-red-400 text-sm">
+        <div className="mt-4 flex items-center gap-2 text-error text-sm">
           <AlertCircle className="w-4 h-4" />
           <p>{errorMessage}</p>
         </div>
       )}
       
       {state === 'idle' && (
-        <p className="mt-4 text-[10px] uppercase tracking-widest text-deep-charcoal/40 dark:text-gray-500">
+        <p className="mt-4 text-[10px] uppercase tracking-widest text-dark-nebula">
           Where Logic Meets the Cosmos
         </p>
       )}

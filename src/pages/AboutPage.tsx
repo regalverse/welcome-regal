@@ -4,25 +4,25 @@ import { ArrowLeft } from 'lucide-react'
 
 const AboutPage: FC = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-3xl mx-auto px-6 py-12">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-cosmic-slate hover:text-starlight-white mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Back
         </Link>
 
-        <h1 className="text-3xl font-bold mb-2">
+        <h1 className="font-display text-4xl leading-tight text-starlight-white mb-2">
           Your Stars. No Filter. No Fluff. Just Facts.
         </h1>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-10">
+        <p className="text-lg text-cosmic-slate mb-10">
           While other apps guess your vibe based on a map from 2,000 years ago,
           we calculate your reality using the sky as it exists today.
         </p>
 
-        <section className="space-y-6 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        <section className="space-y-6 text-pearl-mist leading-relaxed">
           <p>
             Welcome to <strong>AstroRegal</strong>.
           </p>
@@ -36,7 +36,7 @@ const AboutPage: FC = () => {
             the universe.
           </p>
 
-          <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 pt-4">
+          <h2 className="font-display text-2xl text-starlight-white pt-4">
             The "Ghost Sky" Problem
           </h2>
           <p>
@@ -51,7 +51,7 @@ const AboutPage: FC = () => {
             It's why the predictions feel generic. It's why the "vibe" is off.
           </p>
 
-          <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 pt-4">
+          <h2 className="font-display text-2xl text-starlight-white pt-4">
             The Regal Engine: Fixing the Glitch
           </h2>
           <p>
@@ -87,7 +87,7 @@ const AboutPage: FC = () => {
             </li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 pt-4">
+          <h2 className="font-display text-2xl text-starlight-white pt-4">
             Privacy as a Feature
           </h2>
           <p>
@@ -98,7 +98,7 @@ const AboutPage: FC = () => {
             advertisers. We just help you navigate it.
           </p>
 
-          <p className="pt-6 text-sm text-neutral-500 dark:text-neutral-500">
+          <p className="pt-6 text-sm text-dark-nebula">
             Regalverse Private Limited — Gurgaon, India. Architects of the
             Modern Cosmos.
           </p>

@@ -1,35 +1,42 @@
 import { type FC } from 'react'
-import { Header, CelestialDiagram, EmailSignup, TrustBadges, Footer } from '@/components/landing'
+import {
+  Navbar,
+  Hero,
+  QuestionMarquee,
+  OrraDemo,
+  DailyCompanion,
+  Difference,
+  AppGlimpse,
+  Trust,
+  Faq,
+  Waitlist,
+  Footer,
+  Starfield,
+} from '@/components/landing'
 
 export const LandingPage: FC = () => {
   return (
-    <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-      {/* Subtle Grain Overlay */}
+    <div className="relative isolate min-h-screen w-full overflow-x-hidden">
+      <Starfield />
       <div className="grain-texture" />
-      
-      <Header />
-      
-      {/* Main Hero Content */}
-      <main className="flex flex-1 flex-col items-center justify-center px-6 py-12 md:px-20 lg:px-40 text-center">
-        <div className="max-w-3xl w-full flex flex-col items-center gap-12">
-          {/* Headline & Subhead */}
-          <div className="space-y-6">
-            <h1 className="font-serif text-5xl md:text-7xl font-medium leading-tight text-deep-charcoal dark:text-white">
-              The Future of <span className="italic">Cosmic Guidance</span>.
-            </h1>
-            <p className="text-sm md:text-base font-light tracking-[0.05em] leading-relaxed text-deep-charcoal/70 dark:text-gray-400 max-w-xl mx-auto">
-              Something revolutionary is on the horizon. AstroRegal is redefining astrology for young minds. Launching soon.
-            </p>
-          </div>
-          
-          <CelestialDiagram />
-          
-          <EmailSignup />
-          
-          <TrustBadges />
-        </div>
+
+      {/* Nebula + gold glows (Figma: nebula-glow-top / gold-glow-mid) */}
+      <div className="pointer-events-none absolute -left-60 -top-60 -z-10 h-[900px] w-[900px] rounded-full bg-[radial-gradient(closest-side,rgb(93_56_222/0.22),transparent)]" />
+      <div className="pointer-events-none absolute -right-40 top-[1400px] -z-10 h-[700px] w-[700px] rounded-full bg-[radial-gradient(closest-side,rgb(212_168_67/0.06),transparent)]" />
+      <div className="pointer-events-none absolute -left-40 top-[3200px] -z-10 h-[800px] w-[800px] rounded-full bg-[radial-gradient(closest-side,rgb(124_92_252/0.12),transparent)]" />
+
+      <Navbar />
+      <main>
+        <Hero />
+        <QuestionMarquee />
+        <OrraDemo />
+        <DailyCompanion />
+        <Difference />
+        <AppGlimpse />
+        <Trust />
+        <Faq />
+        <Waitlist />
       </main>
-      
       <Footer />
     </div>
   )

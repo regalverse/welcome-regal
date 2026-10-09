@@ -13,7 +13,7 @@ const components: Partial<Components> = {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-gold-500 hover:text-gold-400 underline underline-offset-2 transition-colors"
+      className="font-semibold text-lunar-wisteria hover:text-twilight-orchid underline underline-offset-2 transition-colors"
     >
       {children}
     </a>
@@ -27,7 +27,7 @@ const components: Partial<Components> = {
     const isInline = !className
     if (isInline) {
       return (
-        <code className="px-1.5 py-0.5 rounded text-sm bg-stone-200 dark:bg-stone-700 text-stone-800 dark:text-stone-200 font-mono">
+        <code className="px-1.5 py-0.5 rounded text-sm bg-void-overlay text-silver-frost font-mono">
           {children}
         </code>
       )
@@ -35,12 +35,12 @@ const components: Partial<Components> = {
     return <code className={className}>{children}</code>
   },
   pre: ({ children }) => (
-    <pre className="p-4 rounded-lg overflow-x-auto my-3 bg-stone-900 dark:bg-stone-950 text-stone-100 text-sm font-mono">
+    <pre className="p-4 rounded-lg overflow-x-auto my-3 bg-cosmic-void border border-nebula-edge text-pearl-mist text-sm font-mono">
       {children}
     </pre>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="border-l-4 border-gold-400 pl-4 my-3 text-muted-foreground italic">
+    <blockquote className="border-l-4 border-celestial-violet pl-4 my-3 text-muted-foreground italic">
       {children}
     </blockquote>
   ),
@@ -71,7 +71,7 @@ const components: Partial<Components> = {
   tbody: ({ children }) => <tbody>{children}</tbody>,
   tr: ({ children }) => <tr>{children}</tr>,
   th: ({ children }) => (
-    <th className="border border-border px-3 py-2 text-left bg-stone-100 dark:bg-stone-800 font-semibold text-sm">
+    <th className="border border-border px-3 py-2 text-left bg-nebula-veil font-semibold text-sm">
       {children}
     </th>
   ),

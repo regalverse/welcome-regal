@@ -103,18 +103,18 @@ const PLANET_SYMBOLS: Record<string, string> = {
 }
 
 const PLANET_COLORS: Record<string, string> = {
-  SUN: 'var(--gold-500)',
-  MOON: 'var(--stone-400)',
+  SUN: 'var(--radiant-sun)',
+  MOON: 'var(--silver-frost)',
   MARS: 'var(--error)',
   MERCURY: 'var(--success)',
-  JUPITER: 'var(--gold-400)',
+  JUPITER: 'var(--solar-accent)',
   VENUS: 'var(--info)',
-  SATURN: 'var(--stone-600)',
-  RAHU: 'var(--stone-500)',
-  KETU: 'var(--stone-500)',
+  SATURN: 'var(--cosmic-slate)',
+  RAHU: 'var(--twilight-orchid)',
+  KETU: 'var(--twilight-orchid)',
   URANUS: 'var(--info)',
   NEPTUNE: 'var(--info)',
-  PLUTO: 'var(--stone-700)',
+  PLUTO: 'var(--lunar-wisteria)',
 }
 
 const SIGN_NAMES = [
@@ -150,7 +150,7 @@ const PlanetBadge: FC<PlanetBadgeProps> = ({ planet, compact, onClick }) => {
         'kp-chart-planet relative rounded font-bold',
         'transition-transform duration-150',
         'hover:scale-110',
-        'focus:outline-none focus:ring-2 focus:ring-gold-400/50',
+        'focus:outline-none focus:ring-2 focus:ring-celestial-violet',
         compact ? 'px-1 py-0.5 text-[10px]' : 'px-1.5 py-0.5 text-xs'
       )}
       style={{
@@ -216,7 +216,7 @@ const NorthIndianChart: FC<{
       {/* Outer border */}
       <rect
         x="2" y="2" width="296" height="296"
-        className="fill-none stroke-stone-300 dark:stroke-stone-600"
+        className="fill-none stroke-twilight-line"
         strokeWidth="2"
         rx="6"
       />
@@ -224,27 +224,27 @@ const NorthIndianChart: FC<{
       {/* Inner diamond */}
       <polygon
         points="150,25 275,150 150,275 25,150"
-        className="fill-none stroke-stone-300 dark:stroke-stone-600"
+        className="fill-none stroke-twilight-line"
         strokeWidth="1.5"
       />
 
       {/* Center diamond */}
       <polygon
         points="150,100 200,150 150,200 100,150"
-        className="fill-none stroke-stone-300 dark:stroke-stone-600"
+        className="fill-none stroke-twilight-line"
         strokeWidth="1"
       />
 
       {/* House dividers */}
       {/* Horizontal line through center */}
-      <line x1="25" y1="150" x2="275" y2="150" className="stroke-stone-300 dark:stroke-stone-600" strokeWidth="1" />
+      <line x1="25" y1="150" x2="275" y2="150" className="stroke-twilight-line" strokeWidth="1" />
       {/* Vertical line through center */}
-      <line x1="150" y1="25" x2="150" y2="275" className="stroke-stone-300 dark:stroke-stone-600" strokeWidth="1" />
+      <line x1="150" y1="25" x2="150" y2="275" className="stroke-twilight-line" strokeWidth="1" />
       {/* Diagonal lines */}
-      <line x1="2" y1="2" x2="100" y2="150" className="stroke-stone-300 dark:stroke-stone-600" strokeWidth="1" />
-      <line x1="298" y1="2" x2="200" y2="150" className="stroke-stone-300 dark:stroke-stone-600" strokeWidth="1" />
-      <line x1="2" y1="298" x2="100" y2="150" className="stroke-stone-300 dark:stroke-stone-600" strokeWidth="1" />
-      <line x1="298" y1="298" x2="200" y2="150" className="stroke-stone-300 dark:stroke-stone-600" strokeWidth="1" />
+      <line x1="2" y1="2" x2="100" y2="150" className="stroke-twilight-line" strokeWidth="1" />
+      <line x1="298" y1="2" x2="200" y2="150" className="stroke-twilight-line" strokeWidth="1" />
+      <line x1="2" y1="298" x2="100" y2="150" className="stroke-twilight-line" strokeWidth="1" />
+      <line x1="298" y1="298" x2="200" y2="150" className="stroke-twilight-line" strokeWidth="1" />
 
       {/* House regions with hover detection */}
       {[
@@ -282,8 +282,8 @@ const NorthIndianChart: FC<{
               d={path}
               className={cn(
                 'transition-all duration-200',
-                isHovered ? 'fill-stone-100 dark:fill-stone-800' : 'fill-transparent',
-                isAscendant && !isHovered && 'fill-gold-50 dark:fill-gold-900/20'
+                isHovered ? 'fill-nebula-veil' : 'fill-transparent',
+                isAscendant && !isHovered && 'fill-radiant-sun/10'
               )}
             />
 
@@ -293,7 +293,7 @@ const NorthIndianChart: FC<{
                 cx={150}
                 cy={115}
                 r="4"
-                className="fill-gold-400"
+                className="fill-radiant-sun"
               />
             )}
 
@@ -306,7 +306,7 @@ const NorthIndianChart: FC<{
                 dominantBaseline="middle"
                 className={cn(
                   'text-[10px] font-bold pointer-events-none',
-                  isAscendant ? 'fill-gold-500' : 'fill-stone-400 dark:fill-stone-500'
+                  isAscendant ? 'fill-radiant-sun' : 'fill-cosmic-slate'
                 )}
               >
                 {house}
@@ -320,7 +320,7 @@ const NorthIndianChart: FC<{
                 y={cy + (planets.length > 0 ? 18 : 10)}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                className="text-[8px] fill-stone-400 dark:fill-stone-500 pointer-events-none"
+                className="text-[8px] fill-cosmic-slate pointer-events-none"
               >
                 {SIGN_NAMES[sign - 1]}
               </text>
@@ -373,7 +373,7 @@ const NorthIndianChart: FC<{
       {/* Center info */}
       <foreignObject x="100" y="140" width="100" height="30">
         <div className="text-center">
-          <div className="text-[8px] text-stone-400 dark:text-stone-500 truncate px-1">
+          <div className="text-[8px] text-dark-nebula truncate px-1">
             {data.birthData?.place || 'Chart'}
           </div>
         </div>
@@ -418,7 +418,7 @@ const SouthIndianChart: FC<{
 
   return (
     <div
-      className="kp-chart-south grid grid-cols-4 grid-rows-4 bg-background rounded-lg overflow-hidden shadow-lg border-2 border-stone-300 dark:border-stone-600"
+      className="kp-chart-south grid grid-cols-4 grid-rows-4 bg-background rounded-lg overflow-hidden shadow-lg border-2 border-twilight-line"
       style={{ width: size, height: size }}
     >
       {/* Render all 16 cells, outer ring has content, inner 4 are empty/center */}
@@ -436,15 +436,15 @@ const SouthIndianChart: FC<{
             return (
               <div
                 key={i}
-                className="col-span-2 row-span-2 flex items-center justify-center border border-stone-300 dark:border-stone-600"
+                className="col-span-2 row-span-2 flex items-center justify-center border border-twilight-line"
                 style={{ gridColumn: '2 / 4', gridRow: '2 / 4' }}
               >
                 <div className="text-center p-2">
-                  <div className="text-xs text-stone-500 dark:text-stone-400 font-medium">
+                  <div className="text-xs text-cosmic-slate font-medium">
                     {data.birthData?.place || 'KP Chart'}
                   </div>
                   {data.birthData?.dob && (
-                    <div className="text-[10px] text-stone-400 dark:text-stone-500 mt-1">
+                    <div className="text-[10px] text-dark-nebula mt-1">
                       {new Date(data.birthData.dob).toLocaleDateString()}
                     </div>
                   )}
@@ -473,11 +473,11 @@ const SouthIndianChart: FC<{
             key={i}
             className={cn(
               'kp-chart-house relative flex flex-col items-center justify-center',
-              'border border-stone-300 dark:border-stone-600',
+              'border border-twilight-line',
               'transition-colors duration-200',
-              enableHover && 'cursor-pointer hover:bg-stone-100 dark:hover:bg-stone-800',
-              isAscendant && 'bg-gold-50 dark:bg-gold-900/20',
-              isHovered && 'z-10 bg-stone-100 dark:bg-stone-800'
+              enableHover && 'cursor-pointer hover:bg-nebula-veil',
+              isAscendant && 'bg-radiant-sun/10',
+              isHovered && 'z-10 bg-nebula-veil'
             )}
             style={{
               width: cellSize,
@@ -489,7 +489,7 @@ const SouthIndianChart: FC<{
           >
             {/* Sign name (top-left) */}
             {showSignNames && (
-              <span className="absolute top-1 left-1 text-[10px] text-stone-400 dark:text-stone-500 font-medium">
+              <span className="absolute top-1 left-1 text-[10px] text-dark-nebula font-medium">
                 {SIGN_NAMES[signNum - 1]}
               </span>
             )}
@@ -498,7 +498,7 @@ const SouthIndianChart: FC<{
             {showHouseNumbers && (
               <span className={cn(
                 'absolute top-1 right-1 text-[10px] font-bold',
-                isAscendant ? 'text-gold-500' : 'text-stone-400 dark:text-stone-500'
+                isAscendant ? 'text-radiant-sun' : 'text-dark-nebula'
               )}>
                 {house}
               </span>
@@ -506,7 +506,7 @@ const SouthIndianChart: FC<{
 
             {/* Ascendant marker */}
             {isAscendant && (
-              <div className="absolute top-0 left-0 w-0 h-0 border-t-[12px] border-r-[12px] border-t-gold-400 border-r-transparent" />
+              <div className="absolute top-0 left-0 w-0 h-0 border-t-[12px] border-r-[12px] border-t-radiant-sun border-r-transparent" />
             )}
 
             {/* Planets */}
@@ -597,8 +597,8 @@ export const PlanetDetailsPanel: FC<PlanetDetailsPanelProps> = ({
     <div
       className={cn(
         'kp-planet-details p-4 rounded-lg',
-        'bg-stone-50 dark:bg-stone-900',
-        'border border-stone-200 dark:border-stone-700',
+        'bg-card shadow-card',
+        'border border-nebula-edge',
         'shadow-lg',
         'animate-in fade-in slide-in-from-bottom-2 duration-200',
         className
@@ -613,7 +613,7 @@ export const PlanetDetailsPanel: FC<PlanetDetailsPanelProps> = ({
         </div>
         <button
           onClick={onClose}
-          className="text-stone-400 hover:text-stone-600 dark:hover:text-stone-300 text-lg"
+          className="text-cosmic-slate hover:text-starlight-white text-lg"
         >
           ×
         </button>
@@ -621,43 +621,43 @@ export const PlanetDetailsPanel: FC<PlanetDetailsPanelProps> = ({
 
       <div className="space-y-2 text-sm">
         <div className="flex justify-between">
-          <span className="text-stone-500">Sign:</span>
+          <span className="text-cosmic-slate">Sign:</span>
           <span className="font-medium">{planet.signName}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-stone-500">Longitude:</span>
+          <span className="text-cosmic-slate">Longitude:</span>
           <span className="font-medium">{planet.longitude.toFixed(4)}°</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-stone-500">Nakshatra:</span>
+          <span className="text-cosmic-slate">Nakshatra:</span>
           <span className="font-medium">{planet.nakshatraName}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-stone-500">House:</span>
+          <span className="text-cosmic-slate">House:</span>
           <span className="font-medium">{planet.house}</span>
         </div>
 
         {/* KP Significators */}
-        <div className="mt-3 pt-3 border-t border-stone-200 dark:border-stone-700">
-          <div className="text-xs text-stone-400 dark:text-stone-500 mb-2 font-medium uppercase tracking-wide">
+        <div className="mt-3 pt-3 border-t border-nebula-edge">
+          <div className="text-xs text-dark-nebula mb-2 font-medium uppercase tracking-wide">
             KP Significators
           </div>
           <div className="grid grid-cols-2 gap-2 text-xs">
             <div>
-              <span className="text-stone-500">Sign Lord:</span>
+              <span className="text-cosmic-slate">Sign Lord:</span>
               <span className="ml-1 font-medium">{planet.lords.sign}</span>
             </div>
             <div>
-              <span className="text-stone-500">Star Lord:</span>
+              <span className="text-cosmic-slate">Star Lord:</span>
               <span className="ml-1 font-medium">{planet.lords.star}</span>
             </div>
             <div>
-              <span className="text-stone-500">Sub Lord:</span>
+              <span className="text-cosmic-slate">Sub Lord:</span>
               <span className="ml-1 font-medium">{planet.lords.sub}</span>
             </div>
             {planet.lords.subSub && (
               <div>
-                <span className="text-stone-500">Sub-Sub:</span>
+                <span className="text-cosmic-slate">Sub-Sub:</span>
                 <span className="ml-1 font-medium">{planet.lords.subSub}</span>
               </div>
             )}
@@ -684,14 +684,14 @@ export const ChartStyleSwitcher: FC<ChartStyleSwitcherProps> = ({
   className,
 }) => {
   return (
-    <div className={cn('flex gap-1 p-1 rounded-lg bg-stone-100 dark:bg-stone-800', className)}>
+    <div className={cn('flex gap-1 p-1 rounded-lg bg-nebula-veil', className)}>
       <button
         onClick={() => onChange('north')}
         className={cn(
           'px-3 py-1 rounded-md text-xs font-medium transition-all',
           value === 'north'
-            ? 'bg-gold-400 text-stone-900 shadow-sm'
-            : 'text-stone-600 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-stone-700'
+            ? 'bg-celestial-violet text-starlight-white shadow-glow-violet'
+            : 'text-cosmic-slate hover:bg-void-overlay'
         )}
       >
         North
@@ -701,8 +701,8 @@ export const ChartStyleSwitcher: FC<ChartStyleSwitcherProps> = ({
         className={cn(
           'px-3 py-1 rounded-md text-xs font-medium transition-all',
           value === 'south'
-            ? 'bg-gold-400 text-stone-900 shadow-sm'
-            : 'text-stone-600 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-stone-700'
+            ? 'bg-celestial-violet text-starlight-white shadow-glow-violet'
+            : 'text-cosmic-slate hover:bg-void-overlay'
         )}
       >
         South

@@ -4,25 +4,25 @@ import { ArrowLeft } from 'lucide-react'
 
 const PrivacyPolicyPage: FC = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-3xl mx-auto px-6 py-12">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-cosmic-slate hover:text-starlight-white mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Back
         </Link>
 
-        <h1 className="text-3xl font-bold mb-2">Privacy Policy</h1>
-        <p className="text-sm text-neutral-500 mb-10">
+        <h1 className="font-display text-4xl leading-tight text-starlight-white mb-2">Privacy Policy</h1>
+        <p className="text-sm text-cosmic-slate mb-10">
           Last Updated: February 16, 2026 — Data Fiduciary: Regalverse Private
           Limited ("AstroRegal")
         </p>
 
-        <section className="space-y-8 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        <section className="space-y-8 text-pearl-mist leading-relaxed">
           <div>
-            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+            <h2 className="font-display text-2xl text-starlight-white mb-3">
               1. Introduction
             </h2>
             <p>
@@ -36,7 +36,7 @@ const PrivacyPolicyPage: FC = () => {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+            <h2 className="font-display text-2xl text-starlight-white mb-3">
               2. Notice of Collection
             </h2>
             <p className="mb-4">
@@ -45,65 +45,65 @@ const PrivacyPolicyPage: FC = () => {
               Minimization—we only ask for what the stars need.
             </p>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-neutral-200 dark:border-neutral-800">
+              <table className="w-full text-sm border-[1.5px] border-twilight-line">
                 <thead>
-                  <tr className="bg-neutral-50 dark:bg-neutral-900">
-                    <th className="text-left p-3 border-b border-neutral-200 dark:border-neutral-800 font-semibold">
+                  <tr className="bg-midnight-space">
+                    <th className="text-left p-3 border-b border-twilight-line font-semibold text-starlight-white">
                       Data
                     </th>
-                    <th className="text-left p-3 border-b border-neutral-200 dark:border-neutral-800 font-semibold">
+                    <th className="text-left p-3 border-b border-twilight-line font-semibold text-starlight-white">
                       Purpose
                     </th>
-                    <th className="text-left p-3 border-b border-neutral-200 dark:border-neutral-800 font-semibold">
+                    <th className="text-left p-3 border-b border-twilight-line font-semibold text-starlight-white">
                       Type
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Birth Coordinates (Date, Time, City)
                     </td>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Calculate Natal Chart, Ascendant (Lagna), and Planetary
                       Degrees
                     </td>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Mandatory
                     </td>
                   </tr>
                   <tr>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Current Location (GPS)
                     </td>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Calculate "Local Mean Time" for Transit Charts and
                       Astro-Weather
                     </td>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Mandatory
                     </td>
                   </tr>
                   <tr>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Mobile Number
                     </td>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Account authentication (OTP), password recovery, security
                       notifications
                     </td>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Mandatory
                     </td>
                   </tr>
                   <tr>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Contact List
                     </td>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Enable "Cosmic Compatibility" matching with friends
                     </td>
-                    <td className="p-3 border-b border-neutral-100 dark:border-neutral-800">
+                    <td className="p-3 border-b border-nebula-edge">
                       Optional
                     </td>
                   </tr>
@@ -121,7 +121,7 @@ const PrivacyPolicyPage: FC = () => {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+            <h2 className="font-display text-2xl text-starlight-white mb-3">
               3. Consent Architecture
             </h2>
             <ul className="list-disc pl-6 space-y-2">
@@ -142,7 +142,7 @@ const PrivacyPolicyPage: FC = () => {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+            <h2 className="font-display text-2xl text-starlight-white mb-3">
               4. Data Retention & Erasure
             </h2>
             <ul className="list-disc pl-6 space-y-2">
@@ -162,7 +162,7 @@ const PrivacyPolicyPage: FC = () => {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+            <h2 className="font-display text-2xl text-starlight-white mb-3">
               5. Processing of Children's Data
             </h2>
             <p>
@@ -172,7 +172,7 @@ const PrivacyPolicyPage: FC = () => {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+            <h2 className="font-display text-2xl text-starlight-white mb-3">
               6. Your Rights (The Data Principal)
             </h2>
             <ul className="list-disc pl-6 space-y-2">
@@ -193,7 +193,7 @@ const PrivacyPolicyPage: FC = () => {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+            <h2 className="font-display text-2xl text-starlight-white mb-3">
               7. Important Disclaimers
             </h2>
             <ul className="list-disc pl-6 space-y-2">
@@ -215,13 +215,13 @@ const PrivacyPolicyPage: FC = () => {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+            <h2 className="font-display text-2xl text-starlight-white mb-3">
               8. Grievance Redressal
             </h2>
             <p className="mb-2">
               For privacy concerns, complaints, or to exercise your rights:
             </p>
-            <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-4 text-sm space-y-1">
+            <div className="bg-midnight-space border-[1.5px] border-twilight-line rounded-card p-4 text-sm space-y-1">
               <p>
                 <strong>Designation:</strong> Grievance Officer
               </p>
@@ -236,7 +236,7 @@ const PrivacyPolicyPage: FC = () => {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
+            <h2 className="font-display text-2xl text-starlight-white mb-3">
               9. How to Delete Your Account
             </h2>
             <p className="mb-2">
@@ -257,7 +257,7 @@ const PrivacyPolicyPage: FC = () => {
               registered mobile number) with us at{' '}
               <a
                 href="mailto:admin@astroregal.com"
-                className="underline hover:text-neutral-900 dark:hover:text-neutral-100"
+                className="font-semibold text-lunar-wisteria underline hover:text-twilight-orchid"
               >
                 admin@astroregal.com
               </a>{' '}

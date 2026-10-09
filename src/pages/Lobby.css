@@ -1,31 +1,26 @@
 @import "tailwindcss";
 
-:root {
-  --primary-gold: #C5A028;
-  --cream: #FDFBF7;
-  --charcoal: #2D2D2D;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
+/* Card Elevation on Midnight Space, Twilight Line 1.5px border */
 .glass-card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(197, 160, 40, 0.15);
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+  background: var(--midnight-space);
+  border: 1.5px solid var(--twilight-line);
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.3);
 }
 
+/* Glass Overlay Blur — Violet Whisper hairline edge */
 .nav-pill {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(197, 160, 40, 0.12);
-  box-shadow: 0 8px 32px 0 rgba(197, 160, 40, 0.08);
+  background: rgb(22 25 38 / 0.7);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--violet-whisper);
+  box-shadow: 0 8px 24px -4px rgb(0 0 0 / 0.5);
 }
 
 .glow-subtle {
-  box-shadow: 0 0 50px rgba(197, 160, 40, 0.05);
+  box-shadow: 0 0 50px rgb(124 92 252 / 0.06);
 }
 
 .constellation-overlay {
@@ -35,17 +30,17 @@ html {
 }
 
 .nebula-nav-bg {
-  background: radial-gradient(circle at 20% 50%, rgba(197, 160, 40, 0.05) 0%, transparent 40%),
-              radial-gradient(circle at 80% 50%, rgba(197, 160, 40, 0.05) 0%, transparent 40%);
+  background: radial-gradient(circle at 20% 50%, rgb(124 92 252 / 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 80% 50%, rgb(124 92 252 / 0.08) 0%, transparent 40%);
   mask-image: linear-gradient(to bottom, black, transparent);
 }
 
 .search-shadow {
-  box-shadow: 0 4px 24px -5px rgba(197, 160, 40, 0.2);
+  box-shadow: 0 4px 16px 0 rgb(124 92 252 / 0.2);
 }
 
 .planet-illustration {
-  background: radial-gradient(circle at center, rgba(197, 160, 40, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgb(124 92 252 / 0.3) 0%, transparent 70%);
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -66,18 +61,18 @@ html {
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  border: 1px solid rgba(197, 160, 40, 0.3);
+  border: 1px solid rgb(212 168 67 / 0.4);
 }
 
 .orbit-node {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #C5A028;
+  background: var(--radiant-sun);
   border-radius: 9999px;
   top: 15%;
   right: 0%;
-  box-shadow: 0 0 10px #C5A028;
+  box-shadow: 0 2px 12px 0 rgb(212 168 67 / 0.6);
 }
 
 
