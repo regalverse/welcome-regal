@@ -9,7 +9,7 @@ import {
   AppGlimpse,
   Trust,
   Faq,
-  Waitlist,
+  Download,
   Footer,
   Starfield,
 } from '@/components/landing'
@@ -35,7 +35,7 @@ export const LandingPage: FC = () => {
         <AppGlimpse />
         <Trust />
         <Faq />
-        <Waitlist />
+        <Download />
       </main>
       <Footer />
     </div>

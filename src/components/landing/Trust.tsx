@@ -7,6 +7,9 @@ import { SectionHeading } from './SectionHeading'
 
 const ICONS = [Satellite, ShieldCheck, Lock, HeartHandshake, Building2, Smartphone]
 
+const LINK_CLASS =
+  'inline-flex items-center gap-1 text-sm font-semibold text-lunar-wisteria underline-offset-4 hover:text-twilight-orchid hover:underline'
+
 export const Trust: FC = () => (
   <section id="trust" className="relative px-6 py-20 md:py-28">
     <div className="mx-auto flex max-w-6xl flex-col gap-14">
@@ -32,12 +35,18 @@ export const Trust: FC = () => (
               </span>
               <h3 className="text-xl">{pillar.title}</h3>
               <p className="flex-1 text-sm leading-relaxed text-cosmic-slate">{pillar.body}</p>
-              {pillar.link && (
-                <Link to={pillar.link.to} className="inline-flex items-center gap-1 text-sm font-semibold text-lunar-wisteria underline-offset-4 hover:text-twilight-orchid hover:underline">
-                  {pillar.link.label}
-                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
-                </Link>
-              )}
+              {pillar.link &&
+                ('href' in pillar.link ? (
+                  <a href={pillar.link.href} target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>
+                    {pillar.link.label}
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                  </a>
+                ) : (
+                  <Link to={pillar.link.to} className={LINK_CLASS}>
+                    {pillar.link.label}
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                  </Link>
+                ))}
             </Reveal>
           )
         })}

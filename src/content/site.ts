@@ -1,5 +1,7 @@
 // Single source of truth for landing-page copy and links.
 
+export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.astroregal.app'
+
 export type SocialId = 'instagram' | 'facebook'
 
 export const SOCIAL_LINKS: { id: SocialId; label: string; href: string }[] = [
@@ -14,14 +16,8 @@ export const NAV_LINKS = [
   { label: 'FAQ', href: '#faq' },
 ]
 
-// Launch progress shown in the hero. Flip `done` as milestones land.
-export const LAUNCH_STEPS = [
-  { label: 'Designed', done: true },
-  { label: 'Built', done: true },
-  { label: 'Submitted to Google Play', done: true },
-  { label: 'In review', done: false, active: true },
-  { label: 'Live', done: false },
-]
+// Quick facts shown under the hero download button.
+export const HERO_FACTS = ['Free to download', 'Free Orra credits on signup', 'Android']
 
 export const MARQUEE_QUESTIONS = [
   'How will my day go?',
@@ -223,8 +219,9 @@ export const TRUST_PILLARS = [
     link: { label: 'About us', to: '/about' },
   },
   {
-    title: 'Google Play review',
-    body: 'The app has been submitted to the Google Play Store and is currently in review ahead of launch.',
+    title: 'Live on Google Play',
+    body: 'AstroRegal has passed Google Play’s review and is available to download from the official Play Store.',
+    link: { label: 'View on Google Play', href: PLAY_STORE_URL },
   },
 ]
 
@@ -251,8 +248,8 @@ export const FAQS = [
     a: 'Yes, to start. Every new account gets free credits to chat with Orra, and your daily reading and birth chart are included.',
   },
   {
-    q: 'When can I download it?',
-    a: 'The Android app has been submitted to the Google Play Store and is in review. Join the waitlist and we’ll email you the moment it’s live.',
+    q: 'Where can I download it?',
+    a: 'AstroRegal is live on the Google Play Store for Android. Download it, create your account, and your free Orra credits will be waiting.',
   },
   {
     q: 'Do I need my exact birth time?',

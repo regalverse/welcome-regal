@@ -2,6 +2,7 @@ import { type FC } from 'react'
 import { Link } from 'react-router-dom'
 import { Facebook, Instagram, Mail, type LucideIcon } from 'lucide-react'
 import { NAV_LINKS, SOCIAL_LINKS, type SocialId } from '@/content/site'
+import { GooglePlayBadge } from './GooglePlayBadge'
 import { Logo } from './Logo'
 
 const SOCIAL_ICONS: Record<SocialId, LucideIcon> = {
@@ -18,6 +19,7 @@ export const Footer: FC = () => (
           <p className="max-w-sm text-sm leading-relaxed text-cosmic-slate">
             Your cosmic companion. Real astronomy, Vedic wisdom and an AI that actually listens.
           </p>
+          <GooglePlayBadge className="-my-3 -ml-3 self-start" />
           <ul className="flex flex-wrap gap-3" aria-label="AstroRegal on social media">
             {SOCIAL_LINKS.map((s) => {
               const Icon = SOCIAL_ICONS[s.id]
@@ -64,7 +66,11 @@ export const Footer: FC = () => (
 
       <div className="flex flex-col items-center justify-between gap-3 border-t border-nebula-edge pt-8 text-xs text-dark-nebula md:flex-row">
         <p>© 2026 Regalverse Private Limited. All rights reserved.</p>
-        <p>For reflection and self-discovery. Not a substitute for professional advice.</p>
+        <p className="text-center md:text-right">
+          For reflection and self-discovery. Not a substitute for professional advice.
+          <br />
+          Google Play and the Google Play logo are trademarks of Google LLC.
+        </p>
       </div>
     </div>
   </footer>

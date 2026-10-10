@@ -2,7 +2,7 @@ import { type FC, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { NAV_LINKS } from '@/content/site'
+import { NAV_LINKS, PLAY_STORE_URL } from '@/content/site'
 import { Logo } from './Logo'
 
 export const Navbar: FC = () => {
@@ -40,10 +40,12 @@ export const Navbar: FC = () => {
 
         <div className="flex items-center gap-2">
           <a
-            href="#waitlist"
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-button bg-celestial-violet px-5 py-2.5 text-sm font-semibold text-starlight-white shadow-glow-violet transition-colors hover:bg-astral-iris active:bg-lunar-wisteria sm:inline-flex"
           >
-            Join the waitlist
+            Get the app
           </a>
           <button
             type="button"
@@ -70,11 +72,13 @@ export const Navbar: FC = () => {
             </a>
           ))}
           <a
-            href="#waitlist"
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="mt-1 rounded-button bg-celestial-violet px-4 py-3 text-center font-semibold text-starlight-white"
           >
-            Join the waitlist
+            Get the app on Google Play
           </a>
         </div>
       )}

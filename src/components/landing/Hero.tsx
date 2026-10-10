@@ -1,45 +1,9 @@
 import { type FC } from 'react'
-import { ArrowRight, Check, Gift, Satellite } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { LAUNCH_STEPS } from '@/content/site'
+import { Check, Satellite } from 'lucide-react'
+import { HERO_FACTS } from '@/content/site'
+import { GooglePlayBadge } from './GooglePlayBadge'
 import { PhoneMockup } from './PhoneMockup'
 import { Reveal } from './Reveal'
-
-const LaunchTracker: FC = () => (
-  <ol className="flex flex-wrap items-center gap-x-2 gap-y-3" aria-label="Launch progress">
-    {LAUNCH_STEPS.map((step, i) => (
-      <li key={step.label} className="flex items-center gap-2">
-        <span
-          className={cn(
-            'relative flex h-5 w-5 items-center justify-center rounded-full border text-[10px]',
-            step.done && 'border-celestial-violet bg-celestial-violet text-starlight-white',
-            step.active && 'border-radiant-sun text-radiant-sun',
-            !step.done && !step.active && 'border-twilight-line text-dark-nebula',
-          )}
-        >
-          {step.done && <Check className="h-3 w-3" strokeWidth={3} />}
-          {step.active && (
-            <>
-              <span className="absolute inset-0 rounded-full bg-radiant-sun/40 animate-ping-soft" />
-              <span className="h-1.5 w-1.5 rounded-full bg-radiant-sun" />
-            </>
-          )}
-        </span>
-        <span
-          className={cn(
-            'text-xs',
-            step.done && 'text-pearl-mist',
-            step.active && 'font-semibold text-radiant-sun',
-            !step.done && !step.active && 'text-dark-nebula',
-          )}
-        >
-          {step.label}
-        </span>
-        {i < LAUNCH_STEPS.length - 1 && <span className="h-px w-4 bg-twilight-line" aria-hidden />}
-      </li>
-    ))}
-  </ol>
-)
 
 const PhoneConstellation: FC = () => (
   <div className="relative mx-auto h-[520px] w-full max-w-[560px] sm:h-[600px]">
@@ -90,12 +54,12 @@ export const Hero: FC = () => (
     <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-[1.05fr_1fr]">
       <div className="flex flex-col items-center gap-8 text-center lg:items-start lg:text-left">
         <Reveal immediate>
-          <span className="inline-flex items-center gap-2.5 rounded-full border border-radiant-sun/30 bg-radiant-sun/10 px-4 py-1.5 text-xs font-semibold text-radiant-sun">
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-success/30 bg-success/10 px-4 py-1.5 text-xs font-semibold text-success">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inset-0 rounded-full bg-radiant-sun animate-ping-soft" />
-              <span className="relative h-2 w-2 rounded-full bg-radiant-sun" />
+              <span className="absolute inset-0 rounded-full bg-success animate-ping-soft" />
+              <span className="relative h-2 w-2 rounded-full bg-success" />
             </span>
-            Submitted to Google Play · Launching soon
+            Now live on Google Play
           </span>
         </Reveal>
 
@@ -115,14 +79,8 @@ export const Hero: FC = () => (
           </p>
         </Reveal>
 
-        <Reveal immediate delay={300} className="flex flex-col items-center gap-4 sm:flex-row lg:items-start">
-          <a
-            href="#waitlist"
-            className="inline-flex items-center gap-2 rounded-button bg-celestial-violet px-7 py-4 text-[17px] font-bold tracking-[0.17px] text-starlight-white shadow-glow-violet transition-colors hover:bg-astral-iris active:bg-lunar-wisteria"
-          >
-            Join the waitlist
-            <ArrowRight className="h-4 w-4" aria-hidden />
-          </a>
+        <Reveal immediate delay={300} className="flex flex-col items-center gap-3 sm:flex-row lg:items-center">
+          <GooglePlayBadge className="-my-2 -ml-2" />
           <a
             href="#orra"
             className="inline-flex items-center gap-2 rounded-button border-[1.5px] border-stardust-glow px-7 py-4 text-[15px] font-semibold text-pearl-mist transition-colors hover:border-celestial-violet hover:bg-celestial-violet/8"
@@ -131,12 +89,15 @@ export const Hero: FC = () => (
           </a>
         </Reveal>
 
-        <Reveal immediate delay={400} className="flex flex-col items-center gap-6 lg:items-start">
-          <p className="inline-flex items-center gap-2 text-sm text-pearl-mist">
-            <Gift className="h-4 w-4 text-radiant-sun" aria-hidden />
-            Free Orra credits for every new account
-          </p>
-          <LaunchTracker />
+        <Reveal immediate delay={400}>
+          <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-pearl-mist lg:justify-start">
+            {HERO_FACTS.map((fact) => (
+              <li key={fact} className="inline-flex items-center gap-2">
+                <Check className="h-4 w-4 text-success" aria-hidden />
+                {fact}
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
 
