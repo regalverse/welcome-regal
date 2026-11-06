@@ -57,6 +57,9 @@ export const Footer: FC = () => (
           <Link to="/privacy" className="text-cosmic-slate transition-colors hover:text-starlight-white">
             Privacy policy
           </Link>
+          <Link to="/terms" className="text-cosmic-slate transition-colors hover:text-starlight-white">
+            Terms of service
+          </Link>
           <a href="mailto:admin@astroregal.com" className="inline-flex items-center gap-2 text-cosmic-slate transition-colors hover:text-starlight-white">
             <Mail className="h-3.5 w-3.5" aria-hidden />
             admin@astroregal.com
