@@ -4,6 +4,7 @@ import { LandingPage } from '@/pages/LandingPage'
 const AboutPage = lazy(() => import('@/pages/AboutPage'))
 const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'))
 const TermsOfServicePage = lazy(() => import('@/pages/TermsOfServicePage'))
+const SupportPage = lazy(() => import('@/pages/SupportPage'))
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -21,6 +22,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsOfServicePage />} />
+          <Route path="/support" element={<SupportPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
